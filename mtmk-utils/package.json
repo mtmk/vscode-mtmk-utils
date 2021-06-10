@@ -1,8 +1,10 @@
 {
   "name": "mtmk-utils",
+  "publisher": "mtmk",
+  "repository": {"url": "https://github.com/mtmk/vscode-mtmk-utils"},
 	"displayName": "mtmk-utils",
 	"description": "mtmk Utilities",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"engines": {
 		"vscode": "^1.56.0"
 	},

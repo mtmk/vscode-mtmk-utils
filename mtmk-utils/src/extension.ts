@@ -16,7 +16,17 @@ export function activate(context: vscode.ExtensionContext) {
 	let disposable = vscode.commands.registerCommand('mtmk-utils.startProcess', () => {
 		// The code you place here will be executed every time your command is executed
 		// Display a message box to the user
-		vscode.window.showInformationMessage('Starting process ...... !');
+		let program = vscode.window.showInputBox();
+		program.then(p => {
+			const cp = require('child_process')
+			cp.exec(p, (err : string) => {
+				if (err) {
+					vscode.window.showErrorMessage(`Error starting ${p}: ${err}`);
+				} else {
+					vscode.window.showInformationMessage(`Started ${p}`);
+				}
+			});
+		});
 	});
 
 	context.subscriptions.push(disposable);
